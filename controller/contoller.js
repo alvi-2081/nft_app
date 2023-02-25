@@ -113,7 +113,7 @@ const addproduct = async (req, res) => {
             price: req.body.price,
             status: req.body.status,
             owner_id: req.user._id,
-            image: req.user.image
+            image: req.body.image
         })
         let insertprod = await addprod.save();
         res.status(200).send({ response: res.statusCode, message: "Nft Added Successfully", status: true, data: insertprod })
